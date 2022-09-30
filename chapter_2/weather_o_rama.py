@@ -1,6 +1,6 @@
 # Abstract Base Class (interfaces)
 class Observer:
-    def update(self, temp, humidity, pressuer) -> None:
+    def update(self) -> None:
         raise NotImplementedError
 
 
@@ -38,7 +38,7 @@ class WeatherData(Subject):
 
     def notify_observer(self) -> None:
         for observer in self.observers:
-            observer.update(self.temperature, self.humidity, self.pressure)
+            observer.update()
 
     def measurements_changed(self) -> None:
         self.notify_observer()
@@ -48,6 +48,15 @@ class WeatherData(Subject):
         self.humidity = humidity
         self.pressure = pressure
         self.measurements_changed()
+
+    def get_temperature(self) -> float:
+        return self.temperature
+
+    def get_humidity(self) -> float:
+        return self.humidity
+
+    def get_pressure(self) -> float:
+        return self.pressure
 
     def show_obervers(self) -> None:
         print(f"curr observer lists: ")
@@ -64,9 +73,9 @@ class CurrentConditionsDisplay(Observer, DisplayElement):
         self.temperature = None
         self.humidity = None
 
-    def update(self, temp, humidity, pressure) -> None:
-        self.temperature = temp
-        self.humidity = humidity
+    def update(self) -> None:
+        self.temperature = self.weather_data.get_temperature()
+        self.humidity = self.weather_data.get_humidity()
         self.display()
 
     def display(self) -> None:
@@ -83,7 +92,8 @@ class StatisticsDisplay(Observer, DisplayElement):
         self.temp_sum = 0
         self.num_readings = 0
 
-    def update(self, temp, humidity, pressure) -> None:
+    def update(self) -> None:
+        temp = self.weather_data.get_temperature()
         self.temp_sum += temp
         self.num_readings += 1
         self.max_temp = max(temp, self.max_temp)
@@ -102,7 +112,8 @@ class ForecastDisplay(Observer, DisplayElement):
         self.last_pressure = 0
         self.current_pressure = 0
 
-    def update(self, temp, humidity, pressure) -> None:
+    def update(self) -> None:
+        pressure = self.weather_data.get_pressure()
         self.last_pressure = self.current_pressure
         self.current_pressure = pressure
         self.display()
@@ -128,12 +139,12 @@ class HeatindexDisplay(Observer, DisplayElement):
         self.temperature = 0
         self.humidity = 0
 
-    def update(self, temp, humidity, pressure) -> None:
-        self.temperature = temp
-        self.humidity = humidity
+    def update(self) -> None:
+        self.temperature = self.weather_data.get_temperature()
+        self.humidity = self.weather_data.get_humidity()
         self.display()
 
-    def compute_heatindex(self, t, rh):
+    def compute_heatindex(self, t, rh) -> float:
         index = ((16.923 + (0.185212 * t) + (5.37941 * rh) - (0.100254 * t * rh) +
                   (0.00941695 * (t * t)) + (0.00728898 * (rh * rh)) +
                   (0.000345372 * (t * t * rh)) - (0.000814971 * (t * rh * rh)) +
