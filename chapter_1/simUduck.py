@@ -1,43 +1,13 @@
 
-
+# Abstract Base Class (interfaces)
 class FlyBehavior:
     def fly(self) -> NotImplementedError:
         raise NotImplementedError
 
 
-class FlyWithWings(FlyBehavior):
-    def fly(self) -> None:
-        print(f"I'm flying!")
-
-
-class FlyNoWay(FlyBehavior):
-    def fly(self) -> None:
-        print("I can't fly")
-
-
-class FlyRocketPowered(FlyBehavior):
-    def fly(self) -> None:
-        print("I'm flying like a rocket!")
-
-
 class QuackBehavior:
     def quack(self) -> NotImplementedError:
         raise NotImplementedError
-
-
-class Quack(QuackBehavior):
-    def quack(self) -> None:
-        print("Quack")
-
-
-class MuteQuack(QuackBehavior):
-    def quack(self) -> None:
-        print("<< silence ~ >>")
-
-
-class Squeak(QuackBehavior):
-    def quack(self) -> None:
-        print("Sqeak")
 
 
 class Duck:
@@ -62,6 +32,44 @@ class Duck:
 
     def swim(self) -> None:
         print("All ducks float, even decoys!")
+
+# ------------------------------------------------
+
+# FlyBehavior class implements
+
+
+class FlyWithWings(FlyBehavior):
+    def fly(self) -> None:
+        print(f"I'm flying!")
+
+
+class FlyNoWay(FlyBehavior):
+    def fly(self) -> None:
+        print("I can't fly")
+
+
+class FlyRocketPowered(FlyBehavior):
+    def fly(self) -> None:
+        print("I'm flying like a rocket!")
+
+# QuackBehavior class implement
+
+
+class Quack(QuackBehavior):
+    def quack(self) -> None:
+        print("Quack")
+
+
+class MuteQuack(QuackBehavior):
+    def quack(self) -> None:
+        print("<< silence ~ >>")
+
+
+class Squeak(QuackBehavior):
+    def quack(self) -> None:
+        print("Sqeak")
+
+# Duck class implement
 
 
 class MallarDuck(Duck):
