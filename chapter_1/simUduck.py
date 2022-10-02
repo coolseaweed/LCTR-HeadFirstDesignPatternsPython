@@ -1,41 +1,16 @@
+from abc import ABCMeta, abstractmethod
 
-# Abstract Base Class (interfaces)
+
+# -------------------------------------
+# Fly behavior class
+# -------------------------------------
 class FlyBehavior:
+
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
     def fly(self) -> NotImplementedError:
         raise NotImplementedError
-
-
-class QuackBehavior:
-    def quack(self) -> NotImplementedError:
-        raise NotImplementedError
-
-
-class Duck:
-    def __init__(self) -> None:
-        self.quack_behavior = None
-        self.fly_behavior = None
-
-    def perform_fly(self) -> None:
-        self.fly_behavior.fly()
-
-    def perform_quack(self) -> None:
-        self.quack_behavior.quack()
-
-    def set_fly_behavior(self, fly_behavior: FlyBehavior) -> None:
-        self.fly_behavior = fly_behavior
-
-    def set_quack_behavior(self, quack_behavior: QuackBehavior) -> None:
-        self.quack_behavior = quack_behavior
-
-    def display(self) -> NotImplementedError:
-        raise NotImplementedError
-
-    def swim(self) -> None:
-        print("All ducks float, even decoys!")
-
-# ------------------------------------------------
-
-# FlyBehavior class implements
 
 
 class FlyWithWings(FlyBehavior):
@@ -52,7 +27,18 @@ class FlyRocketPowered(FlyBehavior):
     def fly(self) -> None:
         print("I'm flying like a rocket!")
 
-# QuackBehavior class implement
+# -------------------------------------
+# Quack behavior class
+# -------------------------------------
+
+
+class QuackBehavior:
+
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
+    def quack(self) -> NotImplementedError:
+        raise NotImplementedError
 
 
 class Quack(QuackBehavior):
@@ -69,7 +55,43 @@ class Squeak(QuackBehavior):
     def quack(self) -> None:
         print("Sqeak")
 
-# Duck class implement
+
+class FakeQuack(QuackBehavior):
+    def quack(self) -> None:
+        print("Qwak")
+
+
+# -------------------------------------
+# Duck class
+# -------------------------------------
+
+
+class Duck:
+
+    __metaclass__ = ABCMeta
+
+    def __init__(self) -> None:
+        self.quack_behavior = None
+        self.fly_behavior = None
+
+    def perform_fly(self) -> None:
+        self.fly_behavior.fly()
+
+    def perform_quack(self) -> None:
+        self.quack_behavior.quack()
+
+    def set_fly_behavior(self, fly_behavior: FlyBehavior) -> None:
+        self.fly_behavior = fly_behavior
+
+    def set_quack_behavior(self, quack_behavior: QuackBehavior) -> None:
+        self.quack_behavior = quack_behavior
+
+    @abstractmethod
+    def display(self) -> NotImplementedError:
+        raise NotImplementedError
+
+    def swim(self) -> None:
+        print("All ducks float, even decoys!")
 
 
 class MallarDuck(Duck):
@@ -92,6 +114,9 @@ class ModelDuck(Duck):
         print(f"I'm a Model Duck")
 
 
+# -------------------------------------
+# MAIN
+# -------------------------------------
 if __name__ == "__main__":
 
     print(f"<< Mallar Duck TEST >>")
