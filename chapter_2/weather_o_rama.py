@@ -1,28 +1,46 @@
-# Abstract Base Class (interfaces)
+from abc import ABCMeta, abstractmethod
+
+
+# -------------------------------------
+# Abstract classes
+# -------------------------------------
 class Observer:
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
     def update(self) -> None:
         raise NotImplementedError
 
 
 class DisplayElement:
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
     def display(self) -> None:
         raise NotImplementedError
 
 
 class Subject:
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
     def register_observer(self, observer: Observer) -> None:
         raise NotImplementedError
 
+    @abstractmethod
     def remove_observer(self, observer: Observer) -> None:
         raise NotImplementedError
 
+    @abstractmethod
     def notify_observer(self) -> None:
         raise NotImplementedError
-# ---------------------------------------
-
-# subject class implements
 
 
+# -------------------------------------
+# Implement classes
+# -------------------------------------
+
+# subject
 class WeatherData(Subject):
     def __init__(self) -> None:
         self.observers = []
@@ -63,9 +81,8 @@ class WeatherData(Subject):
         [print(f"* {obs}") for obs in self.observers]
         print(f"-----------------------")
 
-# observer class implements
 
-
+# observer
 class CurrentConditionsDisplay(Observer, DisplayElement):
     def __init__(self, weather_data: WeatherData) -> None:
         self.weather_data = weather_data
@@ -162,6 +179,7 @@ class HeatindexDisplay(Observer, DisplayElement):
         print(f"Heat index: {heatindex:.4f} F")
 
 
+# main
 if __name__ == "__main__":
     weather_data = WeatherData()
     ccd = CurrentConditionsDisplay(weather_data)

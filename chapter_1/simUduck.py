@@ -2,8 +2,9 @@ from abc import ABCMeta, abstractmethod
 
 
 # -------------------------------------
-# Fly behavior class
+# Abstract classes
 # -------------------------------------
+
 class FlyBehavior:
 
     __metaclass__ = ABCMeta
@@ -13,25 +14,6 @@ class FlyBehavior:
         raise NotImplementedError
 
 
-class FlyWithWings(FlyBehavior):
-    def fly(self) -> None:
-        print(f"I'm flying!")
-
-
-class FlyNoWay(FlyBehavior):
-    def fly(self) -> None:
-        print("I can't fly")
-
-
-class FlyRocketPowered(FlyBehavior):
-    def fly(self) -> None:
-        print("I'm flying like a rocket!")
-
-# -------------------------------------
-# Quack behavior class
-# -------------------------------------
-
-
 class QuackBehavior:
 
     __metaclass__ = ABCMeta
@@ -39,31 +21,6 @@ class QuackBehavior:
     @abstractmethod
     def quack(self) -> NotImplementedError:
         raise NotImplementedError
-
-
-class Quack(QuackBehavior):
-    def quack(self) -> None:
-        print("Quack")
-
-
-class MuteQuack(QuackBehavior):
-    def quack(self) -> None:
-        print("<< silence ~ >>")
-
-
-class Squeak(QuackBehavior):
-    def quack(self) -> None:
-        print("Sqeak")
-
-
-class FakeQuack(QuackBehavior):
-    def quack(self) -> None:
-        print("Qwak")
-
-
-# -------------------------------------
-# Duck class
-# -------------------------------------
 
 
 class Duck:
@@ -94,6 +51,48 @@ class Duck:
         print("All ducks float, even decoys!")
 
 
+# -------------------------------------
+# Implement classes
+# -------------------------------------
+
+# FlyBehavior
+class FlyWithWings(FlyBehavior):
+    def fly(self) -> None:
+        print(f"I'm flying!")
+
+
+class FlyNoWay(FlyBehavior):
+    def fly(self) -> None:
+        print("I can't fly")
+
+
+class FlyRocketPowered(FlyBehavior):
+    def fly(self) -> None:
+        print("I'm flying like a rocket!")
+
+
+# QuackBehavior
+class Quack(QuackBehavior):
+    def quack(self) -> None:
+        print("Quack")
+
+
+class MuteQuack(QuackBehavior):
+    def quack(self) -> None:
+        print("<< silence ~ >>")
+
+
+class Squeak(QuackBehavior):
+    def quack(self) -> None:
+        print("Sqeak")
+
+
+class FakeQuack(QuackBehavior):
+    def quack(self) -> None:
+        print("Qwak")
+
+
+# Duck
 class MallarDuck(Duck):
     def __init__(self) -> None:
         super().__init__()
@@ -114,9 +113,7 @@ class ModelDuck(Duck):
         print(f"I'm a Model Duck")
 
 
-# -------------------------------------
-# MAIN
-# -------------------------------------
+# main
 if __name__ == "__main__":
 
     print(f"<< Mallar Duck TEST >>")
