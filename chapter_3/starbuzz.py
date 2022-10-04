@@ -11,9 +11,8 @@ class Size(Enum):
 # -------------------------------------
 # Abstract classes
 # -------------------------------------
-class Beverage:
-
-    __metaclass__ = ABCMeta
+class Beverage(metaclass=ABCMeta):
+    """ abstract class """
 
     def __init__(self) -> None:
         self.description = "Unknown Beverage"
@@ -34,6 +33,7 @@ class Beverage:
 
 
 class CondimentDecorator(Beverage):
+    """ abstract class """
 
     def __init__(self, beverage: Beverage) -> None:
         self.beverage = beverage
