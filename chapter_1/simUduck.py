@@ -4,28 +4,24 @@ from abc import ABCMeta, abstractmethod
 # -------------------------------------
 # Abstract classes
 # -------------------------------------
-
-class FlyBehavior:
-
-    __metaclass__ = ABCMeta
+class FlyBehavior(metaclass=ABCMeta):
+    """ interface class """
 
     @abstractmethod
     def fly(self) -> NotImplementedError:
         raise NotImplementedError
 
 
-class QuackBehavior:
-
-    __metaclass__ = ABCMeta
+class QuackBehavior(metaclass=ABCMeta):
+    """ interface class """
 
     @abstractmethod
     def quack(self) -> NotImplementedError:
         raise NotImplementedError
 
 
-class Duck:
-
-    __metaclass__ = ABCMeta
+class Duck(metaclass=ABCMeta):
+    """ abstract class """
 
     def __init__(self) -> None:
         self.quack_behavior = None
