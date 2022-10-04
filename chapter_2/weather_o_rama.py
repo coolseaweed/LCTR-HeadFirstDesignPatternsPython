@@ -4,24 +4,24 @@ from abc import ABCMeta, abstractmethod
 # -------------------------------------
 # Abstract classes
 # -------------------------------------
-class Observer:
-    __metaclass__ = ABCMeta
+class Observer(metaclass=ABCMeta):
+    """ interface class """
 
     @abstractmethod
     def update(self) -> None:
         raise NotImplementedError
 
 
-class DisplayElement:
-    __metaclass__ = ABCMeta
+class DisplayElement(metaclass=ABCMeta):
+    """ interface class """
 
     @abstractmethod
     def display(self) -> None:
         raise NotImplementedError
 
 
-class Subject:
-    __metaclass__ = ABCMeta
+class Subject(metaclass=ABCMeta):
+    """ interface class """
 
     @abstractmethod
     def register_observer(self, observer: Observer) -> None:
