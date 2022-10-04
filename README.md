@@ -18,3 +18,5 @@
 객체에 추가 요소를 동적으로 더할 수 있다. 데코레이터를 사용하면 서브클래스를 만들 때보다 훨씬 유연하게 기능을 확장할 수 있다.
 
 ---
+
+### [객체지향 개념 정리 (Q&A)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/QnA)
