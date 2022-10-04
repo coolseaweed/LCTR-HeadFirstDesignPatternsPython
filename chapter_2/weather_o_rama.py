@@ -55,6 +55,7 @@ class WeatherData(Subject):
         self.observers.remove(observer)
 
     def notify_observer(self) -> None:
+        """ push info. (subject -> observer) """
         for observer in self.observers:
             observer.update()
 
