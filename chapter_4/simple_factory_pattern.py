@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-""" Simple pizza factory """
+""" Simple Factory Pattern """
 
 # -------------------------------------
 # Abstract classes

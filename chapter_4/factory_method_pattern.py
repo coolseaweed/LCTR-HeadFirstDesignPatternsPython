@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 from typing import Any
 
-""" Different pizza stores """
+""" Factory Method Pattern """
 
 
 # -------------------------------------
@@ -240,10 +240,13 @@ if __name__ == "__main__":
     print(f"Joel ordered a [{pizza.get_name()}]\n{pizza}\n")
 
     pizza = nyStore.order_pizza("pepperoni")
-    print(f"Joel ordered a [{pizza.get_name()}]\n{pizza}\n")
-
-    pizza = chicagoStore.order_pizza("pepperoni")
     print(f"Ethan ordered a [{pizza.get_name()}]\n{pizza}\n")
 
+    pizza = chicagoStore.order_pizza("pepperoni")
+    print(f"Joel ordered a [{pizza.get_name()}]\n{pizza}\n")
+
     pizza = nyStore.order_pizza("veggie")
+    print(f"Ethan ordered a [{pizza.get_name()}]\n{pizza}\n")
+
+    pizza = chicagoStore.order_pizza("veggie")
     print(f"Joel ordered a [{pizza.get_name()}]\n{pizza}\n")
