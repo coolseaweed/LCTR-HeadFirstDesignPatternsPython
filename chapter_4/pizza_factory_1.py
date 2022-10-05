@@ -7,8 +7,8 @@ from abc import ABCMeta, abstractmethod
 # -------------------------------------
 
 
-class Pizza:
-    __metaclass__ = ABCMeta
+class Pizza(metaclass=ABCMeta):
+    """ abstract class """
 
     @abstractmethod
     def __init__(self) -> None:
