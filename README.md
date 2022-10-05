@@ -25,4 +25,4 @@
 
 ---
 
-### [객체지향 개념 정리 (Q&A)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/QnA)
+### [Q&A](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/QnA)
