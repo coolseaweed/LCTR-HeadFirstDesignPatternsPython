@@ -6,6 +6,7 @@
 - 구현보다는 인터페이스에 맞춰서 프로그래밍한다.
 - 상호작용하는 객체 사이에서는 가능하면 `느슨한 결합`을 사용해야 한다.
 - 클래스는 확장에는 열려있어야 하지만 변경에는 닫혀 있어야 한다. `(OCP: Open-Closed Principle)`
+- 추상화된 것에 의존하게 만들고 구상 클래스에 의존하지 않게 만든다.
 
 ---
 ### [CHAPTER 1. 전략 패턴 (Strategy Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_1)
@@ -20,9 +21,13 @@
 ### [CHAPTER 4. 팩토리 패턴 (Factory Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_4)
 **팩토리 매소드 패턴 (Factory Method Pattern)**: 객체를 생성할 때 필요한 인터페이스를 만든다. 어떤 클래스의 인스턴스를 만들지는 서브클래스에서 결정한다. 팩토리 메소드를 사용하면 인스턴스 만드는 일을 서브클래스에 맡길 수 있다.
 
+### [CHAPTER 5. 싱글턴 패턴 (Singleton Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_5)
+**싱글턴 패턴 (Singleton Pattern)**: 클래스 인스턴스를 하나만 만들고, 그 인스턴스로의 전역 접근을 제공한다.
+
 **추상 팩토리 패턴 (Abstract Factory Pattern)**: 구상 클래스에 의존하지 않고도 서로 연관되거나 의존적인 객체로 이루어진 제품군을 생성하는 인터페이스를 제공한다. 구상 클래스는 서브클래스에서 만든다.
 
 
 ---
 
 ### [Q&A](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/QnA)
+
