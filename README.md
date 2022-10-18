@@ -25,9 +25,6 @@
 
 ### [CHAPTER 5. 싱글턴 패턴 (Singleton Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_5)
 **싱글턴 패턴 (Singleton Pattern)**: 클래스 인스턴스를 하나만 만들고, 그 인스턴스로의 전역 접근을 제공한다.
-```
-python chapter_5/main.py
-```
 
 ### [CHAPTER 6. 커맨드 패턴 (Command Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_6)
 요청 내역을 객체로 캡슐화해서 객체를 서로 다른 요청 내역에 따라 매개변수화할 수 있다. 이러면 요청을 큐에 저장하거나 로그로 기록하거나 작업 취소 기능을 사용할 수 있다.
