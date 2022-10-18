@@ -1,89 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abstract import Observer, DisplayElement
+from subject import WeatherData
 
 
-# -------------------------------------
-# Abstract classes
-# -------------------------------------
-class Observer(metaclass=ABCMeta):
-    """ interface class """
-
-    @abstractmethod
-    def update(self) -> None:
-        raise NotImplementedError
-
-
-class DisplayElement(metaclass=ABCMeta):
-    """ interface class """
-
-    @abstractmethod
-    def display(self) -> None:
-        raise NotImplementedError
-
-
-class Subject(metaclass=ABCMeta):
-    """ interface class """
-
-    @abstractmethod
-    def register_observer(self, observer: Observer) -> None:
-        raise NotImplementedError
-
-    @abstractmethod
-    def remove_observer(self, observer: Observer) -> None:
-        raise NotImplementedError
-
-    @abstractmethod
-    def notify_observer(self) -> None:
-        raise NotImplementedError
-
-
-# -------------------------------------
-# Implement classes
-# -------------------------------------
-
-# subject
-class WeatherData(Subject):
-    def __init__(self) -> None:
-        self.observers = []
-        self.temperature = None
-        self.humidity = None
-        self.pressure = None
-
-    def register_observer(self, observer: Observer) -> None:
-        self.observers.append(observer)
-
-    def remove_observer(self, observer: Observer) -> None:
-        self.observers.remove(observer)
-
-    def notify_observer(self) -> None:
-        """ push info. (subject -> observer) """
-        for observer in self.observers:
-            observer.update()
-
-    def measurements_changed(self) -> None:
-        self.notify_observer()
-
-    def set_measurements(self, temperature, humidity, pressure) -> None:
-        self.temperature = temperature
-        self.humidity = humidity
-        self.pressure = pressure
-        self.measurements_changed()
-
-    def get_temperature(self) -> float:
-        return self.temperature
-
-    def get_humidity(self) -> float:
-        return self.humidity
-
-    def get_pressure(self) -> float:
-        return self.pressure
-
-    def show_obervers(self) -> None:
-        print(f"curr observer lists: ")
-        [print(f"* {obs}") for obs in self.observers]
-        print(f"-----------------------")
-
-
-# observer
+# Concrete class
 class CurrentConditionsDisplay(Observer, DisplayElement):
     def __init__(self, weather_data: WeatherData) -> None:
         self.weather_data = weather_data
@@ -178,21 +97,3 @@ class HeatindexDisplay(Observer, DisplayElement):
 
         heatindex = self.compute_heatindex(self.temperature, self.humidity)
         print(f"Heat index: {heatindex:.4f} F")
-
-
-# main
-if __name__ == "__main__":
-    weather_data = WeatherData()
-    ccd = CurrentConditionsDisplay(weather_data)
-    sd = StatisticsDisplay(weather_data)
-    fd = ForecastDisplay(weather_data)
-    hd = HeatindexDisplay(weather_data)
-
-    weather_data.set_measurements(80, 65, 30.4)
-    weather_data.set_measurements(82, 70, 29.2)
-    weather_data.set_measurements(78, 90, 29.2)
-
-    weather_data.show_obervers()
-    weather_data.remove_observer(ccd)
-
-    weather_data.show_obervers()
