@@ -1,9 +1,8 @@
 from abstract import Duck
-from fly import *
-from quack import *
+from fly_behavior import FlyWithWings, FlyNoWay
+from quack_behavior import Quack
 
 
-# Duck
 class MallarDuck(Duck):
     def __init__(self) -> None:
         super().__init__()
@@ -22,19 +21,3 @@ class ModelDuck(Duck):
 
     def display(self) -> None:
         print(f"I'm a Model Duck")
-
-
-# main
-if __name__ == "__main__":
-
-    print(f"<< Mallar Duck TEST >>")
-    mallar_duck = MallarDuck()
-    mallar_duck.perform_quack()
-    mallar_duck.perform_fly()
-    mallar_duck.display()
-    print(f"----------------------------------")
-    print(f"<< Model Duck TEST >>")
-    model_duck = ModelDuck()
-    model_duck.perform_fly()
-    model_duck.set_fly_behavior(FlyRocketPowered())
-    model_duck.perform_fly()
