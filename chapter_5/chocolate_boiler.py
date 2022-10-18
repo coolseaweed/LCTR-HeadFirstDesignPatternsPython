@@ -1,15 +1,4 @@
-class SingletonError(Exception):
-    pass
-
-
-class Singleton(type):
-    _instances = {}
-
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(
-                Singleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
+from singleton import Singleton, SingletonError
 
 
 class ChocolateBoiler(metaclass=Singleton):
@@ -30,7 +19,7 @@ class ChocolateBoiler(metaclass=Singleton):
         self.empty = True
         print("Empty!")
 
-    def boil(self):
+    def boil(self) -> None:
         self.boiled = True
         print("boiled!")
 
@@ -39,16 +28,3 @@ class ChocolateBoiler(metaclass=Singleton):
 
     def is_boiled(self) -> bool:
         return self.boiled
-
-
-def main() -> None:
-    boiler = ChocolateBoiler()
-    boiler.fill()
-    boiler.boil()
-    boiler2 = ChocolateBoiler()
-    boiler.drain()
-    print(boiler2 is boiler)
-
-
-if __name__ == "__main__":
-    main()
