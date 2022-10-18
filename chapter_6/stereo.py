@@ -1,4 +1,4 @@
-from interface import Command
+from abstract import Command
 
 
 class Stereo:

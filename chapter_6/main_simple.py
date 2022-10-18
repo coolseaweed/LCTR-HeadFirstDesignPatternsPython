@@ -1,18 +1,7 @@
-from interface import Command
+from abstract import Command
 from garage import *
 from light import *
-
-
-class SimpleRemoteControl(object):
-
-    def __init__(self) -> None:
-        self._slot = None
-
-    def set_command(self, command: Command) -> None:
-        self._slot = command
-
-    def button_was_pressed(self) -> None:
-        self._slot.execute()
+from remote import SimpleRemoteControl
 
 
 def main() -> None:
