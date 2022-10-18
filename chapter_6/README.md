@@ -17,7 +17,7 @@
 
 - 커맨드 패턴을 활용해서 로그 및 트랜잭션 시스템을 구현할 수 있다.
 
-## 패턴 테스트
+## 테스트
 ```
 python chapter_6/main_simple.py
 python chapter_6/main_undo.py
