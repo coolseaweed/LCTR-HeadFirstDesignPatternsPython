@@ -7,6 +7,7 @@
 - 상호작용하는 객체 사이에서는 가능하면 `느슨한 결합`을 사용해야 한다.
 - 클래스는 확장에는 열려있어야 하지만 변경에는 닫혀 있어야 한다. `(OCP: Open-Closed Principle)`
 - 추상화된 것에 의존하게 만들고 구상 클래스에 의존하지 않게 만든다.
+- 최소 지식 원칙에 따라 객체 사이의 상호작용은 될 수 있으면 아주 가까운 객체 사이에서만 허용하는 편이 좋다.
 
 ---
 ### [CHAPTER 1. 전략 패턴 (Strategy Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_1)
@@ -30,7 +31,9 @@
 요청 내역을 객체로 캡슐화해서 객체를 서로 다른 요청 내역에 따라 매개변수화할 수 있다. 이러면 요청을 큐에 저장하거나 로그로 기록하거나 작업 취소 기능을 사용할 수 있다.
 
 
-
+### [CHAPTER 7. 어댑터 & 퍼사드 패턴 (Adapter & Facade Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_7)
+**어댑터 패턴 (Adapter Pattern)**: 특정 클래스 인터페이스를 클라이언트에서 요구하는 다른 인터페이스로 변환한다. 인터페이스가 호환되지 않아 같이 쓸 수 없었던 클래스를 사용할 수 있게 도와준다.
+**퍼사드 패턴 (Facade Pattern)**: 서브시스템에 있는 일련의 인터페이스를 통합 인터페이스로 묶어 준다. 또한 고수준 인터페이스도 정의하므로 서브시스템을 더 편리하게 사용할 수 있다.
 
 ---
 
