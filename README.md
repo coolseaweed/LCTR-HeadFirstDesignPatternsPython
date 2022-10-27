@@ -8,6 +8,7 @@
 - 클래스는 확장에는 열려있어야 하지만 변경에는 닫혀 있어야 한다. `(OCP: Open-Closed Principle)`
 - 추상화된 것에 의존하게 만들고 구상 클래스에 의존하지 않게 만든다.
 - 최소 지식 원칙에 따라 객체 사이의 상호작용은 될 수 있으면 아주 가까운 객체 사이에서만 허용하는 편이 좋다.
+- `할리우드 원칙` 을 활용해서 의존성 부패를 방지한다.
 
 ---
 ### [CHAPTER 1. 전략 패턴 (Strategy Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_1)
@@ -34,6 +35,9 @@
 ### [CHAPTER 7. 어댑터 & 퍼사드 패턴 (Adapter & Facade Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_7)
 **어댑터 패턴 (Adapter Pattern)**: 특정 클래스 인터페이스를 클라이언트에서 요구하는 다른 인터페이스로 변환한다. 인터페이스가 호환되지 않아 같이 쓸 수 없었던 클래스를 사용할 수 있게 도와준다.
 **퍼사드 패턴 (Facade Pattern)**: 서브시스템에 있는 일련의 인터페이스를 통합 인터페이스로 묶어 준다. 또한 고수준 인터페이스도 정의하므로 서브시스템을 더 편리하게 사용할 수 있다.
+
+### [CHAPTER 8. 템플릿 패턴 (Template Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_8)
+알고리즘의 골격을 정의한다. 템플릿 메소드를 사용하면 알고리즘의 일부 단계를 서브클래스에서 구현할 수 있으며, 알고리즘의 구조는 그대로 유지하면서 알고리즘의 특정 단계를 서브클래스에서 재정의할 수도 있다.
 
 ---
 
