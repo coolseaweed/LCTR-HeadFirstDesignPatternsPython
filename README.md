@@ -9,6 +9,7 @@
 - 추상화된 것에 의존하게 만들고 구상 클래스에 의존하지 않게 만든다.
 - 최소 지식 원칙에 따라 객체 사이의 상호작용은 될 수 있으면 아주 가까운 객체 사이에서만 허용하는 편이 좋다.
 - `할리우드 원칙` 을 활용해서 의존성 부패를 방지한다.
+- 어떤 클래스가 바뀌는 이유는 하나뿐이여야만 한다.
 
 ---
 ### [CHAPTER 1. 전략 패턴 (Strategy Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_1)
@@ -38,6 +39,12 @@
 
 ### [CHAPTER 8. 템플릿 패턴 (Template Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_8)
 알고리즘의 골격을 정의한다. 템플릿 메소드를 사용하면 알고리즘의 일부 단계를 서브클래스에서 구현할 수 있으며, 알고리즘의 구조는 그대로 유지하면서 알고리즘의 특정 단계를 서브클래스에서 재정의할 수도 있다.
+
+
+### [CHAPTER 9. 반복자 & 컴포지트 패턴 (Iterator & Composite Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_9)
+**반복자 패턴 (Iterator Pattern)**: 컬렉션의 구현 방법을 노출하지 않으면서 집합체 내의 모든 항목에 접근하는 방법을 제공한다.
+**컴포지트 패턴 (Composite Pattern)**: 객체를 트리구조로 구성해서 부분-전체 계층구조를 구현한다. 컴포지트 패턴을 사용하면 클라이언트에서 개별 객체와 복합 객체를 똑같은 방법으로 다룰 수 있다.
+
 
 ---
 
