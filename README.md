@@ -46,6 +46,9 @@
 **컴포지트 패턴 (Composite Pattern)**: 객체를 트리구조로 구성해서 부분-전체 계층구조를 구현한다. 컴포지트 패턴을 사용하면 클라이언트에서 개별 객체와 복합 객체를 똑같은 방법으로 다룰 수 있다.
 
 
+### [CHAPTER 10. 상태 패턴 (State Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_10)
+내부 상태가 바뀜에 따라 객체의 행동이 바뀔 수 있도록 해준다. 마치 객체의 클래스가 바뀌는 것 같은 결과를 얻을 수 있다.
+
 ---
 
 ### [Q&A](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/QnA)
