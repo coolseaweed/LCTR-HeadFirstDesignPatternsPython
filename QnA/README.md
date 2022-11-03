@@ -22,6 +22,7 @@ java based OOP 에서 말하는 abstract class 와 interface 의 차이는 다�
 ## 2. **Serialize & Deserialize**
 
 **Serialize**: 시스템상의 객체를 바이트(byte)로 변환하는 것
+
 **Deserialize**: 바이트(byte)로 변환된 객체를 다시 시스템에서의 객체로 변환하는 것
 
 
