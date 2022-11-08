@@ -53,6 +53,12 @@
 ### [CHAPTER 11. 프록시 패턴 (Proxy Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_11)
 특정 객체로의 접근을 제어하는 대리인(특정 객체를 대변하는 객체)을 제공한다.
 
+
+### [CHAPTER 12. 복합 패턴 (Combining Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_12)
+2개 이상의 패턴을 결합해서 일반적으로 자주 등장하는 문제들의 해법을 제공한다.
+
+
+
 ---
 
 ### [Q&A](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/QnA)
