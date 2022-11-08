@@ -23,6 +23,6 @@
 
 ## 테스트
 ```
-python chapter_7/adapter/main.py
-python chapter_7/facade/main.py
+python chapter_07/adapter/main.py
+python chapter_07/facade/main.py
 ```

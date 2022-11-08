@@ -23,6 +23,6 @@
 
 ## 테스트
 ```
-python chapter_9/iterator/main.py
-python chapter_9/composite/main.py
+python chapter_09/iterator/main.py
+python chapter_09/composite/main.py
 ```

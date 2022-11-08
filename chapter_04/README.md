@@ -22,7 +22,7 @@
 
 ## 테스트
 ```
-python chapter_4/main_simple.py
-python chapter_4/abstract_factory/main.py
-python chapter_4/factory_method/main.py
+python chapter_04/main_simple.py
+python chapter_04/abstract_factory/main.py
+python chapter_04/factory_method/main.py
 ```

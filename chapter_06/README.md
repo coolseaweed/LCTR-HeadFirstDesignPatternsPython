@@ -19,7 +19,7 @@
 
 ## 테스트
 ```
-python chapter_6/main_simple.py
-python chapter_6/main_undo.py
-python chapter_6/main_macro.py
+python chapter_06/main_simple.py
+python chapter_06/main_undo.py
+python chapter_06/main_macro.py
 ```

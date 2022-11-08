@@ -20,5 +20,5 @@
 
 ## 테스트
 ```
-python chapter_8/main.py
+python chapter_08/main.py
 ```
