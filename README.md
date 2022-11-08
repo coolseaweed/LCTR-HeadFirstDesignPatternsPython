@@ -49,6 +49,10 @@
 ### [CHAPTER 10. 상태 패턴 (State Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_10)
 내부 상태가 바뀜에 따라 객체의 행동이 바뀔 수 있도록 해준다. 마치 객체의 클래스가 바뀌는 것 같은 결과를 얻을 수 있다.
 
+
+### [CHAPTER 11. 프록시 패턴 (Proxy Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_11)
+특정 객체로의 접근을 제어하는 대리인(특정 객체를 대변하는 객체)을 제공한다.
+
 ---
 
 ### [Q&A](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/QnA)
