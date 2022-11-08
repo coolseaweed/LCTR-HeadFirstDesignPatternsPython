@@ -43,6 +43,7 @@
 
 ### [CHAPTER 9. 반복자 & 컴포지트 패턴 (Iterator & Composite Pattern)](https://github.com/coolseaweed/head_first_design_patterns_python/tree/main/chapter_9)
 **반복자 패턴 (Iterator Pattern)**: 컬렉션의 구현 방법을 노출하지 않으면서 집합체 내의 모든 항목에 접근하는 방법을 제공한다.
+
 **컴포지트 패턴 (Composite Pattern)**: 객체를 트리구조로 구성해서 부분-전체 계층구조를 구현한다. 컴포지트 패턴을 사용하면 클라이언트에서 개별 객체와 복합 객체를 똑같은 방법으로 다룰 수 있다.
 
 
